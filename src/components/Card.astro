@@ -1,0 +1,47 @@
+---
+interface Props {
+    title: string;
+    text: string;
+    style:string
+}
+
+const { title, text, style } = Astro.props;
+---
+
+<section class={style}>
+    <article class="card">
+        <h4 class="text-gradient">{title}</h4>
+    </article>
+    <p>{text}</p>
+</section>
+
+<style>
+    section {
+        display: flex;
+        position: relative;
+        height: 100vh;
+        font-size: 4em;
+        justify-content: center;
+        width: 100%;
+        flex-direction: column;
+    }
+    h4 {
+        font-size: 1em;
+    }
+    p {
+        bottom: 45%;
+        left: 2%;
+        position: absolute;
+        z-index: -1;
+        white-space: nowrap;
+        font-size: 2.2em;
+        color: rgba(24, 24, 24, 0.164);
+        font-weight: bold;
+    }
+    .left {
+		align-items: flex-start;
+    }
+    .right {
+        align-items: flex-end;
+    }
+</style>

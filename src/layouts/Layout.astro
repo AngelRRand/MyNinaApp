@@ -1,0 +1,98 @@
+---
+import Title from '../components/Title.astro';
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Title/>
+		<main>
+			<slot />
+		</main>
+	</body>
+</html>
+
+
+
+<style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		
+	}
+	:root {
+		--accent: 204, 129, 8;
+		--accent-light: 255, 190, 87;
+		--accent-dark: 201, 146, 58;
+		--accent-gradient: linear-gradient(
+			5deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 50%,
+			white 50%
+		);
+	}
+	html {
+		background: #ececec;
+		background-size: 224px;
+		font-family: 'Inria Serif', serif;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+	body {
+		height: 200vh;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.card {
+		box-shadow: 0px 10px 15px -10px rgb(var(--accent-dark));
+		padding: 1rem;
+		
+        view-timeline-name: --image;
+        animation-timeline: --image;
+        animation-name: scroll;
+        animation-range: entry 45% cover 50%;
+        animation-fill-mode: both;
+	}
+
+
+	@keyframes scroll {
+        from {
+            opacity: 0;
+            scale: 15%;
+        }
+
+        to {
+            opacity: 1;
+            scale: 100%;
+        }
+    }
+</style>
