@@ -2,7 +2,7 @@
 interface Props {
     title: string;
     text: string;
-    style:string
+    style: string;
 }
 
 const { title, text, style } = Astro.props;
@@ -11,15 +11,21 @@ const { title, text, style } = Astro.props;
 <section class={style}>
     <article class="card">
         <h4 class="text-gradient">{title}</h4>
+        <p class="subText">{text}</p>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Perferendis repellendus, debitis officia aspernatur optio illum
+            itaque quam quibusdam error delectus impedit consequatur, accusamus,
+            labore deleniti molestiae voluptas aut eos quidem!
+        </p>
     </article>
-    <p>{text}</p>
 </section>
 
 <style>
     section {
         display: flex;
         position: relative;
-        height: 100vh;
+        height: 70vh;
         font-size: 4em;
         justify-content: center;
         width: 100%;
@@ -29,8 +35,12 @@ const { title, text, style } = Astro.props;
         font-size: 1em;
     }
     p {
+        font-size: 1rem;
+        text-align: right;
+    }
+    .subText {
         bottom: 45%;
-        left: 2%;
+        right: 2%;
         position: absolute;
         z-index: -1;
         white-space: nowrap;
@@ -39,7 +49,7 @@ const { title, text, style } = Astro.props;
         font-weight: bold;
     }
     .left {
-		align-items: flex-start;
+        align-items: flex-start;
     }
     .right {
         align-items: flex-end;

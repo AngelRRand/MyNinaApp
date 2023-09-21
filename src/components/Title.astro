@@ -1,6 +1,12 @@
 <nav>
+	<div class="box box1">
+	</div>
+	<div class="box box2">
+	</div>
+	<div class="gemetric">
+	</div>
 	<h1 class="text-gradient">NINA</h1>
-	<p>Cuida a tu perro y dale el amor que merece.</p>
+	<p>De mirada pura y amor verdadero.</p>
 </nav>
 
 <style>
@@ -11,15 +17,49 @@
 		text-align: center;
 		width: auto;
 		height: 100vh;
+		position: relative;
+		overflow: hidden;
 	}
 	h1 {
 		font-size: 10em;
-		font-weight: 400;
-		line-height: 1;
+		font-weight: 800;
 		text-align: center;
 	}
 	p {
 		font-size: 2rem;
-		color: var(--accent);
+	}
+	div {
+		width: 20vw;
+		height: 80vw;
+		rotate: -45deg;
+		position: absolute;
+		overflow: hidden;
+		right:  -5vw;
+		top: -35vh;
+		overflow: hidden; 
+    	z-index: -1;
+	}
+	.box{
+		width: 20vw;
+		height: 80vw;
+		rotate: -45deg;
+		position: absolute;
+		overflow: hidden;
+		overflow: hidden; 
+    	z-index: -1;
+	}
+	.box1 {
+		right:  -5.5vw;
+		top: -35vh;
+		background-color: #FBAB7E;
+		background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+		border: 1px solid black;
+	}
+	.box2{
+		right:  -4.5vw;
+		top: -35vh;
+		background-color: #FBAB7E;
+		background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+		border: 1px solid black;
 	}
 </style>
